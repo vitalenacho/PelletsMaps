@@ -483,7 +483,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Viruta",
-      detalle: "<b class='text-success'>Oferta<br>[toneladas]Oferta</b>",
+      detalle: "<b class='text-success'>Oferta<br>[toneladas]</b>",
       invMin: dataSale.invViruta[0],
       t0: dataSale.invViruta[1],
       invMax: dataSale.invViruta[2],
