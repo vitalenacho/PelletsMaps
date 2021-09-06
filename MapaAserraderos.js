@@ -343,7 +343,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       residuo: "Aserrín",
-      detalle: "<b class='text-secondary'>Stock</b>",
+      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
       invMin: dataSale.invAserrin[0],
       t0: dataSale.invAserrin[1],
       invMax: dataSale.invAserrin[2],
@@ -356,7 +356,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       residuo: "Chip",
-      detalle: "<b class='text-secondary'>Stock</b>",
+      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
       invMin: dataSale.invChip[0],
       t0: dataSale.invChip[1],
       invMax: dataSale.invChip[2],
@@ -367,7 +367,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       residuo: "Viruta",
-      detalle: "<b class='text-secondary'>Stock</b>",
+      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
       invMin: dataSale.invViruta[0],
       t0: dataSale.invViruta[1],
       invMax: dataSale.invViruta[2],
@@ -377,7 +377,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       producto: "Embolsado",
-      detalle: "<b class='text-secondary'>Stock/Prod</b>",
+      detalle: "<b class='text-secondary'>Stock/Producción<br>[toneladas]</b>",
       invMin: dataSale.invEmbolsado[0],
       t0: dataSale.invEmbolsado[1],
       invMax: dataSale.invEmbolsado[2],
@@ -390,7 +390,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       producto: "A granel",
-      detalle: "<b class='text-secondary'>Stock/Prod</b>",
+      detalle: "<b class='text-secondary'>Stock/Producción<br>[toneladas]</b>",
       invMin: dataSale.invGranel[0],
       t0: dataSale.invGranel[1],
       invMax: dataSale.invGranel[2],
@@ -437,7 +437,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Aserrín",
-      detalle: "<b class='text-success'>Oferta</b>",
+      detalle: "<b class='text-success'>Oferta <br>[toneladas]</b>",
       invMin: dataSale.invAserrin[0],
       t0: dataSale.invAserrin[1],
       invMax: dataSale.invAserrin[2],
@@ -460,7 +460,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Chip",
-      detalle: "<b class='text-success'>Oferta</b>",
+      detalle: "<b class='text-success'>Oferta<br>[toneladas]</b>",
       invMin: dataSale.invChip[0],
       t0: dataSale.invChip[1],
       invMax: dataSale.invChip[2],
@@ -483,7 +483,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Viruta",
-      detalle: "<b class='text-success'>Oferta</b>",
+      detalle: "<b class='text-success'>Oferta<br>[toneladas]Oferta</b>",
       invMin: dataSale.invViruta[0],
       t0: dataSale.invViruta[1],
       invMax: dataSale.invViruta[2],
@@ -531,7 +531,7 @@ function viewSaleConsumo(data) {
     index: 0,
     row: {
       producto: "Embolsado",
-      detalle: "<b class='text-danger'>Demanda</b>",
+      detalle: "<b class='text-danger'>Demanda<br>[toneladas]</b>",
       invMin: dataSale.invEmbolsado[0],
       t0: dataSale.invEmbolsado[1],
       invMax: dataSale.invEmbolsado[2],
@@ -554,7 +554,7 @@ function viewSaleConsumo(data) {
     index: 0,
     row: {
       producto: "Granel",
-      detalle: "<b class='text-danger'>Demanda</b>",
+      detalle: "<b class='text-danger'>Demanda<br>[toneladas]</b>",
       invMin: dataSale.invGranel[0],
       t0: dataSale.invGranel[1],
       invMax: dataSale.invGranel[2],
@@ -616,7 +616,7 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Stock Min",
+          title: "Stock Min<br>[toneladas]",
           field: "invMin",
           rowspan: 2,
           align: "center",
@@ -625,7 +625,7 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Stock Max",
+          title: "Stock Max<br>[toneladas]",
           field: "invMax",
           rowspan: 2,
           align: "center",
@@ -634,7 +634,7 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Producción Min",
+          title: "Producción Min<br>[toneladas]",
           field: "prodMin",
           rowspan: 2,
           align: "center",
@@ -643,7 +643,7 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Producción Max",
+          title: "Producción Max<br>[toneladas]",
           field: "prodMax",
           rowspan: 2,
           align: "center",
