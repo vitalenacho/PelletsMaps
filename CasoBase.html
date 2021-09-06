@@ -34,18 +34,9 @@
       type="text/javascript"
       src="../js-examples-rendering-helpers/iframe-height.js"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
   </head>
 
   <body id="markers-on-the-map">
@@ -55,14 +46,24 @@
       <div class="card-header">Cadena de Suministro del Pellet</div>
       <div class="card-body">
         <h5 class="card-title">Elija una opción</h5>
-        <button type="button" onclick="displayMarkers(window.my_JSON_object,true);" class="btn btn-success">
+        <button
+          type="button"
+          onclick="displayMarkers(window.my_JSON_object,true);"
+          class="btn btn-success"
+        >
           Red de Abastecimiento de Residuos
         </button>
-        <button type="button" onclick="displayMarkers(window.my_JSON_object,false);" class="btn btn-danger">
+        <button
+          type="button"
+          onclick="displayMarkers(window.my_JSON_object,false);"
+          class="btn btn-danger"
+        >
           Red de Distribucion de Pellets
         </button>
       </div>
-      <div class="card-footer text-muted fw-lighter fst-italic">Ignacio Vitale, Mariana E. Cóccola, Matías González, Rodolfo G. Dondo</div>
+      <div class="card-footer text-muted fw-lighter fst-italic">
+        Ignacio Vitale, Mariana E. Cóccola, Matías González, Rodolfo G. Dondo
+      </div>
     </div>
     <div
       id="map"
@@ -70,6 +71,75 @@
     ></div>
     <div id="panel"></div>
 
+    <div
+      class="modal fade"
+      id="ModalCenterSale"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLongTitle">Caso de estudio</h5>
+            <button type="button" onclick="resetSaleForm()" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <h6 class="modal-title mx-auto" id="ModalLongTitle">
+            <h5 id="clientHelp" class="form-text font-weight-bold text-center">
+              No hay datos aún
+            </h5>
+          </h6>
+          <div class="modal-body">
+            <form
+              class="form mb-0"
+              id="saleForm"
+              role="form"
+              autocomplete="off"
+              action=""
+              method="POST"
+            >
+              <input
+                type="hidden"
+                class="form-control selector"
+                name="clienteModificar"
+                id="clienteModificar"
+              />
+            </form>
+            <div id="toolbar"></div>
+            <div class="reports">
+              <table
+                class="table"
+                id="tableSale"
+                data-toolbar="#toolbar"
+                data-search="false"
+                data-show-refresh="false"
+                data-show-toggle="true"
+                data-show-fullscreen="true"
+                data-show-columns-toggle-all="true"
+                data-detail-view="false"
+                data-show-export="false"
+                data-single-select="true"
+                data-click-to-select="true"
+                data-detail-formatter="detailFormatter"
+                data-minimum-count-columns="2"
+                data-show-pagination-switch="false"
+                data-pagination="false"
+                data-id-field="id"
+                data-show-footer="true"
+                data-response-handler="responseHandler"
+              ></table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
     <script type="text/javascript" src="MapaAserraderos.js"></script>
   </body>
 </html>
