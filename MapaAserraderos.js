@@ -377,7 +377,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       producto: "Embolsado",
-      detalle: "<b class='text-secondary'>Stock/Producción<br>[toneladas]</b>",
+      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
       invMin: dataSale.invEmbolsado[0],
       t0: dataSale.invEmbolsado[1],
       invMax: dataSale.invEmbolsado[2],
@@ -390,7 +390,7 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       producto: "A granel",
-      detalle: "<b class='text-secondary'>Stock/Producción<br>[toneladas]</b>",
+      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
       invMin: dataSale.invGranel[0],
       t0: dataSale.invGranel[1],
       invMax: dataSale.invGranel[2],
@@ -553,7 +553,7 @@ function viewSaleConsumo(data) {
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      producto: "Granel",
+      producto: "A granel",
       detalle: "<b class='text-danger'>Demanda<br>[toneladas]</b>",
       invMin: dataSale.invGranel[0],
       t0: dataSale.invGranel[1],
@@ -616,6 +616,13 @@ function initTable() {
           sortable: true,
         },
         {
+          title: "Semanas",
+          field: "sem",
+          colspan: 13,
+          align: "center",
+          visible: false,
+        },
+        {
           title: "Stock Min<br>[toneladas]",
           field: "invMin",
           rowspan: 2,
@@ -650,13 +657,6 @@ function initTable() {
           valign: "middle",
           visible: false,
           sortable: true,
-        },
-        {
-          title: "Semanas",
-          field: "sem",
-          colspan: 13,
-          align: "center",
-          visible: false,
         },
       ],
       [
