@@ -662,7 +662,7 @@ function initTable() {
       [
         {
           field: "t0",
-          title: "t0",
+          title: "Stock Inicial",
           sortable: true,
           align: "center",
         },
