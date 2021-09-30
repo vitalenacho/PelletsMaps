@@ -94,7 +94,7 @@ function displayMarkers(dataSet, supply) {
 </svg>
     `.trim();
   window.destinos = destinos;
-  if (destinos.length > 1) {
+  if (supply != 3) {
     if (supply) {
       addCircleToMap(map), addCircleToMap2(map), addCircleToMap3(map);
     }
@@ -133,6 +133,100 @@ function displayMarkers(dataSet, supply) {
           );
           var useIcon = deliverNoSale;
         } else if (supply) {
+          var sizeIcon = parseInt(destinos[i].size);
+          deliverNoSale = new H.map.DomIcon(
+            svgMarker
+              .replace("dataReplace", destinos[i].id)
+              .replace("replaceColor", "#5cb85c")
+              .replace("replaceWidth", sizeIcon)
+              .replace("replaceHeight", sizeIcon)
+              .replace("replaceCY", sizeIcon / 2)
+              .replace("replaceCX", sizeIcon / 2)
+              .replace("replaceR", sizeIcon / 2 - 1)
+              .replace(
+                "replaceFont",
+                "font-size:" + (sizeIcon / 2 - 1).toString() + "px"
+              )
+          );
+          var useIcon = deliverNoSale;
+        } else {
+          var useIcon = false;
+        }
+        if (useIcon != false) {
+          var dataSale = JSON.stringify(destinos[i]);
+          var marker = new H.map.DomMarker(
+            {
+              lat: destinos[i].latitud,
+              lng: destinos[i].longitud,
+            },
+            { icon: useIcon }
+          );
+          marker.dataSale = dataSale;
+
+          group.addObject(marker);
+          map.getViewModel().setLookAtData({
+            bounds: group.getBoundingBox(),
+          });
+        }
+      }
+    }
+    if (window.counterClicks) {
+      group.addEventListener(
+        "tap",
+        function (evt) {
+          map.setCenter(evt.target.getGeometry());
+          var dataSale = JSON.parse(evt.target.dataSale);
+          if (dataSale.tipo == "aserradero") {
+            viewSaleAserradero(evt.target.dataSale);
+          } else if (dataSale.tipo == "consumidor") {
+            viewSaleConsumo(evt.target.dataSale);
+          } else {
+            viewSalePlanta(evt.target.dataSale);
+          }
+          $("#clientHelp")[0].innerText = dataSale.id;
+        },
+        false
+      );
+      window.counterClicks = false;
+    }
+    // Add the maneuvers group to the map
+    map.addObject(group);
+  } else{
+    for (let i = 0; i < destinos.length; i++) {
+      if (destinos[i].latitud != 0) {
+        if (destinos[i].tipo == "consumidor") {
+          deliverNoSale = new H.map.DomIcon(
+            svgMarker
+              .replace("dataReplace", destinos[i].id)
+              .replace("replaceColor", "#d9534f")
+              .replace("replaceWidth", 40)
+              .replace("replaceHeight", 40)
+              .replace("replaceCY", 40 / 2)
+              .replace("replaceCX", 40 / 2)
+              .replace("replaceR", 40 / 2 - 1)
+              .replace(
+                "replaceFont",
+                "font-size:" + (40 / 2 - 1).toString() + "px"
+              )
+          );
+          var useIcon = deliverNoSale;
+        } else if (destinos[i].tipo == "planta") {
+          deliverNoSale = new H.map.DomIcon(
+            svgMarker
+              .replace("dataReplace", destinos[i].id)
+              .replace("replaceColor", "#3b5998")
+              .replace("replaceWidth", 44)
+              .replace("replaceHeight", 44)
+              .replace("replaceCY", 44 / 2)
+              .replace("replaceCX", 44 / 2)
+              .replace("replaceR", 44 / 2 - 1)
+              .replace(
+                "replaceFont",
+                "font-size:" + (44 / 2 - 1).toString() + "px"
+              )
+          );
+          var useIcon = deliverNoSale;
+        } else if (destinos[i].tipo == "aserradero") {
           var sizeIcon = parseInt(destinos[i].size);
           deliverNoSale = new H.map.DomIcon(
             svgMarker
