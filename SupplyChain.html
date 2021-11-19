@@ -51,7 +51,7 @@
             <div class="row justify-content-center">
               <div class="col-auto">
                 <div class="form-group my-1">
-                  <select class="form-control" id="slc1">
+                  <select class="form-control" id="slc1" onchange="clearOldSuggestions()">
                     <option>OBR</option>
                     <option>VMI</option>
                   </select>
@@ -59,7 +59,7 @@
               </div>
               <div class="col-auto">
                 <div class="form-group my-1">
-                  <select class="form-control" id="slc2">
+                  <select class="form-control" id="slc2" onchange="clearOldSuggestions()"">
                     <option>V1</option>
                     <option>V2</option>
                     <option>V3</option>
@@ -68,7 +68,7 @@
               </div>
               <div class="col-auto">
                 <div class="form-group my-1">
-                  <select class="form-control" id="slc3">
+                  <select class="form-control" id="slc3" onchange="clearOldSuggestions()">
                     <option>LD</option>
                     <option>UD</option>
                   </select>
