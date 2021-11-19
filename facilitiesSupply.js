@@ -1,4 +1,4 @@
-window.my_JSON_object = [
+window.onload = window.my_JSON_object = [
   {
     nombre: "ASERRADERO ORCELLET",
     id: "A1",
