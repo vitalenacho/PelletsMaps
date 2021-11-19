@@ -414,6 +414,10 @@ function viewSalePlanta(data) {
   $table.bootstrapTable("showColumn", "producto");
   $table.bootstrapTable("showColumn", "prodMin");
   $table.bootstrapTable("showColumn", "prodMax");
+  $table.bootstrapTable("showColumn", "fProdCost");
+  $table.bootstrapTable("showColumn", "vProdCost")
+  $table.bootstrapTable("hideColumn", "resCost");
+  $table.bootstrapTable("showColumn", "invCost");
   $table.bootstrapTable("hideColumn", "t1");
   $table.bootstrapTable("hideColumn", "t2");
   $table.bootstrapTable("hideColumn", "t3");
@@ -436,13 +440,12 @@ function viewSalePlanta(data) {
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      residuo: "Aserrín",
-      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
+      residuo: "Wet Sawdust",
+      detalle: "<b class='text-secondary'>Stock<br>[ton]</b>",
       invMin: dataSale.invAserrin[0],
       t0: dataSale.invAserrin[1],
       invMax: dataSale.invAserrin[2],
-      t1: "as",
-      t2: "asd",
+      invCost: dataSale.invAserrin[3],
     },
   });
   newId += 1;
@@ -450,46 +453,54 @@ function viewSalePlanta(data) {
     index: 0,
     row: {
       residuo: "Chip",
-      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
+      detalle: "<b class='text-secondary'>Stock<br>[ton]</b>",
       invMin: dataSale.invChip[0],
       t0: dataSale.invChip[1],
       invMax: dataSale.invChip[2],
+      invCost: dataSale.invChip[3],
     },
   });
   newId += 1;
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      residuo: "Viruta",
-      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
+      residuo: "Shavings",
+      detalle: "<b class='text-secondary'>Stock<br>[ton]</b>",
       invMin: dataSale.invViruta[0],
       t0: dataSale.invViruta[1],
       invMax: dataSale.invViruta[2],
+      invCost: dataSale.invViruta[3],
     },
   });
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      producto: "Embolsado",
-      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
+      producto: "Bagged",
+      detalle: "<b class='text-secondary'>Stock<br>[ton]</b>",
       invMin: dataSale.invEmbolsado[0],
       t0: dataSale.invEmbolsado[1],
       invMax: dataSale.invEmbolsado[2],
+      invCost: dataSale.invEmbolsado[3],
       prodMin: dataSale.capProdEmbolsado[0],
       prodMax: dataSale.capProdEmbolsado[1],
+      fProdCost: dataSale.capProdEmbolsado[2],
+      vProdCost: dataSale.capProdEmbolsado[3],
     },
   });
   newId += 1;
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      producto: "A granel",
-      detalle: "<b class='text-secondary'>Stock<br>[toneladas]</b>",
+      producto: "Bulk",
+      detalle: "<b class='text-secondary'>Stock<br>[ton]</b>",
       invMin: dataSale.invGranel[0],
       t0: dataSale.invGranel[1],
       invMax: dataSale.invGranel[2],
+      invCost: dataSale.invGranel[3],
       prodMin: dataSale.capProdGranel[0],
       prodMax: dataSale.capProdGranel[1],
+      fProdCost: dataSale.capProdGranel[2],
+      vProdCost: dataSale.capProdGranel[3],
     },
   });
 }
@@ -511,6 +522,10 @@ function viewSaleAserradero(data) {
   $table.bootstrapTable("showColumn", "residuo");
   $table.bootstrapTable("hideColumn", "prodMin");
   $table.bootstrapTable("hideColumn", "prodMax");
+  $table.bootstrapTable("hideColumn", "fProdCost");
+  $table.bootstrapTable("hideColumn", "vProdCost")
+  $table.bootstrapTable("showColumn", "resCost");
+  $table.bootstrapTable("showColumn", "invCost");
   $table.bootstrapTable("showColumn", "t1");
   $table.bootstrapTable("showColumn", "t2");
   $table.bootstrapTable("showColumn", "t3");
@@ -532,11 +547,13 @@ function viewSaleAserradero(data) {
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      residuo: "Aserrín",
-      detalle: "<b class='text-success'>Oferta <br>[toneladas]</b>",
+      residuo: "Wet Sawdust",
+      detalle: "<b class='text-success'>Ofert <br>[ton]</b>",
       invMin: dataSale.invAserrin[0],
       t0: dataSale.invAserrin[1],
       invMax: dataSale.invAserrin[2],
+      invCost: dataSale.invAserrin[3],
+      resCost: dataSale.invAserrin[4],
       t1: dataSale.oferAserrin[0],
       t2: dataSale.oferAserrin[1],
       t3: dataSale.oferAserrin[2],
@@ -556,10 +573,12 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Chip",
-      detalle: "<b class='text-success'>Oferta<br>[toneladas]</b>",
+      detalle: "<b class='text-success'>Ofert<br>[ton]</b>",
       invMin: dataSale.invChip[0],
       t0: dataSale.invChip[1],
       invMax: dataSale.invChip[2],
+      invCost: dataSale.invChip[3],
+      resCost: dataSale.invChip[4],
       t1: dataSale.oferChip[0],
       t2: dataSale.oferChip[1],
       t3: dataSale.oferChip[2],
@@ -578,11 +597,13 @@ function viewSaleAserradero(data) {
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      residuo: "Viruta",
-      detalle: "<b class='text-success'>Oferta<br>[toneladas]</b>",
+      residuo: "Shavings",
+      detalle: "<b class='text-success'>Ofert<br>[ton]</b>",
       invMin: dataSale.invViruta[0],
       t0: dataSale.invViruta[1],
       invMax: dataSale.invViruta[2],
+      invCost: dataSale.invViruta[3],
+      resCost: dataSale.invViruta[4],
       t1: dataSale.oferViruta[0],
       t2: dataSale.oferViruta[1],
       t3: dataSale.oferViruta[2],
@@ -605,6 +626,10 @@ function viewSaleConsumo(data) {
   $table.bootstrapTable("showColumn", "producto");
   $table.bootstrapTable("hideColumn", "prodMin");
   $table.bootstrapTable("hideColumn", "prodMax");
+  $table.bootstrapTable("hideColumn", "fProdCost");
+  $table.bootstrapTable("hideColumn", "vProdCost")
+  $table.bootstrapTable("hideColumn", "resCost");
+  $table.bootstrapTable("showColumn", "invCost");
   $table.bootstrapTable("showColumn", "t1");
   $table.bootstrapTable("showColumn", "t2");
   $table.bootstrapTable("showColumn", "t3");
@@ -626,8 +651,8 @@ function viewSaleConsumo(data) {
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      producto: "Embolsado",
-      detalle: "<b class='text-danger'>Demanda<br>[toneladas]</b>",
+      producto: "Bagged",
+      detalle: "<b class='text-danger'>Demand<br>[ton]</b>",
       invMin: dataSale.invEmbolsado[0],
       t0: dataSale.invEmbolsado[1],
       invMax: dataSale.invEmbolsado[2],
@@ -649,8 +674,8 @@ function viewSaleConsumo(data) {
   $table.bootstrapTable("insertRow", {
     index: 0,
     row: {
-      producto: "A granel",
-      detalle: "<b class='text-danger'>Demanda<br>[toneladas]</b>",
+      producto: "Bulk",
+      detalle: "<b class='text-danger'>Demand<br>[ton]</b>",
       invMin: dataSale.invGranel[0],
       t0: dataSale.invGranel[1],
       invMax: dataSale.invGranel[2],
@@ -683,7 +708,7 @@ function initTable() {
     columns: [
       [
         {
-          title: "Residuo",
+          title: "Biomass",
           field: "residuo",
           rowspan: 2,
           align: "center",
@@ -693,7 +718,7 @@ function initTable() {
           formatter: residueFormatter,
         },
         {
-          title: "Producto",
+          title: "Product",
           field: "producto",
           rowspan: 2,
           align: "center",
@@ -703,7 +728,7 @@ function initTable() {
           formatter: productFormatter,
         },
         {
-          title: "Detalle",
+          title: "Detail",
           field: "detalle",
           rowspan: 2,
           align: "center",
@@ -712,14 +737,32 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Semanas",
+          title: "Weeks",
           field: "sem",
           colspan: 13,
           align: "center",
           visible: false,
         },
         {
-          title: "Stock Min<br>[toneladas]",
+          title: "Residue Cost<br>[USD/ton]",
+          field: "resCost",
+          rowspan: 2,
+          align: "center",
+          valign: "middle",
+          visible: false,
+          sortable: true,
+        },
+        {
+          title: "Inventory Cost<br>[USD/ton]",
+          field: "invCost",
+          rowspan: 2,
+          align: "center",
+          valign: "middle",
+          visible: false,
+          sortable: true,
+        },
+        {
+          title: "MinStock <br>[ton]",
           field: "invMin",
           rowspan: 2,
           align: "center",
@@ -728,7 +771,7 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Stock Max<br>[toneladas]",
+          title: "MaxStock <br>[ton]",
           field: "invMax",
           rowspan: 2,
           align: "center",
@@ -737,7 +780,7 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Producción Min<br>[toneladas]",
+          title: "Min Production Capacity Min<br>[ton]",
           field: "prodMin",
           rowspan: 2,
           align: "center",
@@ -746,8 +789,26 @@ function initTable() {
           sortable: true,
         },
         {
-          title: "Producción Max<br>[toneladas]",
+          title: "Max Production Capacity<br>[ton]",
           field: "prodMax",
+          rowspan: 2,
+          align: "center",
+          valign: "middle",
+          visible: false,
+          sortable: true,
+        },
+        {
+          title: "Fixed Production Cost<br>[USD/week]",
+          field: "fProdCost",
+          rowspan: 2,
+          align: "center",
+          valign: "middle",
+          visible: false,
+          sortable: true,
+        },
+        {
+          title: "Variable Production Cost<br>[USD/ton]",
+          field: "vProdCost",
           rowspan: 2,
           align: "center",
           valign: "middle",
@@ -758,7 +819,7 @@ function initTable() {
       [
         {
           field: "t0",
-          title: "Stock Inicial",
+          title: "Initial Stock ",
           sortable: true,
           align: "center",
         },
@@ -847,7 +908,7 @@ $(function () {
   $("#locale").change(initTable);
   $table.bootstrapTable("hideLoading");
 });
-
+/*
 window.my_JSON_object = [
   {
     nombre: "Fuente MP 1",
@@ -1518,3 +1579,4 @@ window.my_JSON_object = [
     tipo: "consumidor",
   },
 ];
+*/
