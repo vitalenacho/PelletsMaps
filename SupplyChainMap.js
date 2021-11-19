@@ -85,7 +85,8 @@ function addCircleToMap3(map) {
 window.counterClicks = true;
 function displayMarkers(dataSet, supply) {
   clearOldSuggestions();
-  var destinos = dataSet;
+  var instance = [$("#slc1").val(),$("#slc2").val(),$("#slc3").val()].join("_");
+  var destinos = dataSet[instance];
   //Create the svg mark-up
   svgMarker = `
   <svg xmlns="http://www.w3.org/2000/svg" width="replaceWidth" height="replaceHeight">
