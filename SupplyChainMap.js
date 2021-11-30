@@ -549,7 +549,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Wet Sawdust",
-      detalle: "<b class='text-success'>Ofert <br>[ton]</b>",
+      detalle: "<b class='text-success'>Available<br>[ton]</b>",
       invMin: dataSale.invAserrin[0],
       t0: dataSale.invAserrin[1],
       invMax: dataSale.invAserrin[2],
@@ -574,7 +574,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Chip",
-      detalle: "<b class='text-success'>Ofert<br>[ton]</b>",
+      detalle: "<b class='text-success'>Available<br>[ton]</b>",
       invMin: dataSale.invChip[0],
       t0: dataSale.invChip[1],
       invMax: dataSale.invChip[2],
@@ -599,7 +599,7 @@ function viewSaleAserradero(data) {
     index: 0,
     row: {
       residuo: "Shavings",
-      detalle: "<b class='text-success'>Ofert<br>[ton]</b>",
+      detalle: "<b class='text-success'>Available<br>[ton]</b>",
       invMin: dataSale.invViruta[0],
       t0: dataSale.invViruta[1],
       invMax: dataSale.invViruta[2],
